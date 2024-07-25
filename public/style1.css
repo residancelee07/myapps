@@ -1,0 +1,57 @@
+body{
+    margin:0;
+    padding:0;
+    background-color: pink;
+    text-align: center;
+}
+h1{
+    background-color: blueviolet;
+    height:5rem;
+    line-height: 5rem;
+}
+.choice{
+    height: 165px;
+    width: 165px;
+}
+img{
+    height: 150px;
+    width: 150px;
+    border-radius: 1rem;
+    justify-content: center;
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    gap: 1rem;
+}
+.msgcontainer{
+    display: inline;
+}
+#msg{
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    display: inline;
+    font-size: 2rem;
+    padding: 1rem;
+
+}
+#resetbtn{
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+    display: inline;
+    font-size: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.hide{
+    display:none
+}
