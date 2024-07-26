@@ -8,20 +8,24 @@ let reset = document.querySelector("#resetbtn");
 console.log(reset);
 const draw = ()=>{
     msg.innerHTML = "Game was Draw. Play Again"
+    msg.style.backgroundColor = 'black';
 }
 const resetGame =()=>{
-    userscor.innerHTML = 0
-    compscor.innerHTML = 0
-    msg.innerHTML = `Your Move`
+    userscor.innerHTML = 0;
+    compscor.innerHTML = 0;
+    msg.innerHTML = `Your Move`;
+    msg.style.backgroundColor = 'black';
 }
-const showwinner = (userwin)=>{
+const showwinner = (userwin,userchoice,comchoice)=>{
     if(userwin){ 
         userscore ++
-        msg.innerHTML = `You Win!`;
+        msg.innerHTML = `You Win! Your ${userchoice} beat ${comchoice}`;
+        msg.style.backgroundColor = 'green';
         userscor.innerHTML = userscore
     }else{
         compscore ++
-        msg.innerHTML = `You Lose!`;
+        msg.innerHTML = `You Lose! Com ${comchoice} beat ${userchoice}`;
+        msg.style.backgroundColor = 'red';
         compscor.innerHTML = compscore
     }
 }
@@ -34,7 +38,7 @@ const playgame = (userchoice) =>{
     console.log("userchoice", userchoice);
     const comchoice = gencomchoice();
     console.log("comchoice", comchoice);
-    
+
     if(userchoice === comchoice){
         draw();
     }else{
@@ -46,7 +50,7 @@ const playgame = (userchoice) =>{
         }else{
             userwin = comchoice === "rock" ? false : true
         }
-        showwinner(userwin);
+        showwinner(userwin,userchoice,comchoice);
     }
 }
 choices.forEach((choice)=>{
@@ -56,4 +60,3 @@ choices.forEach((choice)=>{
     })
 })
 reset.addEventListener("click",resetGame);
-
